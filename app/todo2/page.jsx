@@ -2,13 +2,13 @@
 
 import {useEffect, useState} from "react";
 
-export default async function TodoPage(){
-    const {todo, setTodos} = useState([]);
-    const {title, setTitle} = useState("");
-    const {isDone, setIsDone} = useState(false);
+export default function TodoPage(){
+    const [todos, setTodos] = useState([]);
+    const [title, setTitle] = useState("");
+    const [isDone, setIsDone] = useState(false);
 
     useEffect(()=>{
-        fetch("/api/todos")
+        fetch("/api/todo")
         .then((res) => res.json())
         .then((data) => setTodos(data));
     }, [])
@@ -21,7 +21,7 @@ export default async function TodoPage(){
                 py-2 px-3 mr-2 text-black" onChange={(e) => setTitle(e.target.value)}/>
                 <button type="button" className="bg-blue-500 
                 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={HandleAddTodo}>Add Todo</button>
+                onClick={()=>{}}>Add Todo</button>
             </form>
             <ul>
                 {todos.map((todo) => (

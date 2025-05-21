@@ -1,8 +1,7 @@
-"use client";
-//import prisma from "@/lib/prisma";
-//import addTodo from "../actions/addTodo";
-//import deleteTodo from "../actions/deleteTodo"
-//import toggleTodo from "../actions/toggleTodo";
+import prisma from "@/lib/prisma";
+import addTodo from "../actions/addTodo";
+import deleteTodo from "../actions/deleteTodo"
+import toggleTodo from "../actions/toggleTodo";
 
 export default async function TodoPage(){
     const todos = await prisma.todo.findMany({
