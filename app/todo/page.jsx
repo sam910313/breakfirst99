@@ -7,7 +7,6 @@ export default async function TodoPage(){
     const todos = await prisma.todo.findMany({
         orderBy: [{ id:"asc" }],
 });
-
     return (
         <main className="container mx-auto px-4">
             <h1 className="text-2xl font-bold text-center my-6">Todo List</h1>
