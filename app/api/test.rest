@@ -1,0 +1,38 @@
+@port = 3000
+@host = http://localhost:{{port}}
+
+GET {{host}}/api/todo
+content-type: application/json
+
+###
+GET {{host}}/api/todo?filter=12
+content-type: application/json
+
+###
+POST {{host}}/api/todo
+content-type: application/json
+
+{
+    "title": "abcd hello"
+}
+
+###
+GET {{host}}/api/todo/5
+###
+DELETE {{host}}/api/todo/6
+
+###
+PATCH {{host}}/api/todo/6
+content-type: application/json
+
+{
+    "title": "aaa 333"
+}
+
+###
+PATCH {{host}}/api/todo/6
+content-type: application/json
+
+{
+    "idDone": true
+}
